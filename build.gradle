@@ -1,0 +1,62 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.4.10'
+    id 'com.bmuschko.nexus' version '2.3.1'
+    id 'io.codearte.nexus-staging' version '0.11.0'
+}
+
+group = "com.github.alkurop"
+archivesBaseName = 'ghostinshell'
+version = "0.1"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.jetbrains.kotlin:kotlin-test-junit'
+}
+
+test {
+    useJUnit()
+}
+
+modifyPom {
+    project {
+        name 'Ghost-in-Shell'
+        description 'Library'
+        url 'https://github.com/alkurop/Ghost-in-Shell'
+        inceptionYear '2021'
+
+        scm {
+            url 'https://github.com/alkurop/Ghost-in-Shell'
+        }
+
+        licenses {
+            license {
+                name 'The Apache Software License, Version 2.0'
+                url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                distribution 'repo'
+            }
+        }
+
+        developers {
+            developer {
+                id 'alkurop'
+                name 'Alex K'
+                email 'alkurop@gmail.com'
+            }
+        }
+    }
+}
+
+extraArchive {
+    sources = true
+    tests = true
+    javadoc = true
+}
+
+nexus {
+    sign = true
+    repositoryUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+    snapshotRepositoryUrl = 'https://oss.sonatype.org/content/repositories/snapshots/'
+}
