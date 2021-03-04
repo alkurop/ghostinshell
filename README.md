@@ -1,4 +1,6 @@
-# Ghost in Shell
+# Ghost in Shell (kotlin)
+
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.alkurop/ghostinshell/badge.svg?style=plastic)](https://maven-badges.herokuapp.com/maven-central/com.github.alkurop/ghostinshell)
 
 Imagine you have an egg.
 The only way to know what's inside is to break it.
