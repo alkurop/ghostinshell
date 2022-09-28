@@ -9,4 +9,6 @@ Same egg can only be broken once.
 
 Because breaking eggs feels violent and  unpleasant, I decided to name the project [Ghost in Shell](https://en.m.wikipedia.org/wiki/Ghost_in_the_Shell_(1995_film)) instead.
 
+This is a wrapper with getter that can be called only once
+
 
