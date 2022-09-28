@@ -4,7 +4,7 @@
 
 Imagine you have an egg.
 The only way to know what's inside is to break it.
-Same egg can only be broken once.
+Same as egg that can only be broken once.
 
 
 Because breaking eggs feels violent and  unpleasant, I decided to name the project [Ghost in Shell](https://en.m.wikipedia.org/wiki/Ghost_in_the_Shell_(1995_film)) instead.
