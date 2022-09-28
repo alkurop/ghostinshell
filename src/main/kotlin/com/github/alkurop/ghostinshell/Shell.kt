@@ -26,6 +26,6 @@ class Shell<T>(ghost: T?) {
 
     companion object {
         fun <T> empty(): Shell<T> = Shell(null)
-        fun <T> T?.toShell() = Shell(this)
+        fun <T : Any> T?.toShell() = Shell(this)
     }
 }
