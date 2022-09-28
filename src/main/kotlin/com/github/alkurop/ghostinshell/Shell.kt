@@ -1,30 +1,14 @@
 package com.github.alkurop.ghostinshell
 
+import java.util.concurrent.atomic.AtomicReference
+
 class Shell<T>(ghost: T?) {
-    @Volatile
-    var ghost: T?
-        private set
-        get() {
-            if (!isPresent) return null
-            synchronized(this) {
-                if (!isPresent) return null
-                isPresent = false
+    val ghost: AtomicReference<T> = AtomicReference(ghost)
 
-                val currentValue = field
-                field = null
-                return currentValue
-            }
-        }
-
-    @Volatile
-    private var isPresent: Boolean
-
-    init {
-        this.ghost = ghost
-        this.isPresent = ghost != null
-    }
+    fun get(): T? = ghost.getAndSet(null)
 
     companion object {
         fun <T> empty(): Shell<T> = Shell(null)
+        fun <T> T?.toShell() = Shell(this)
     }
 }
